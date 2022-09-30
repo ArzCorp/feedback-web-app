@@ -25,9 +25,9 @@
 	--purple-hover-color: #c75af6;
 
 	--blue-color: #4661e6;
+	--blue-hover-color: #7c91f9;
 	--light-blue-color: #62bcfa;
 	--dark-blue-color: #373f68;
-	--blue-hover-color: #7c91f9;
 }
 
 html {
@@ -70,4 +70,22 @@ h4 {
 	line-height: 2rem;
 	letter-spacing: -0.2;
 	font-weight: 700;
+}
+
+.text-regular {
+	font-size: 1.6rem;
+	line-height: 2.3rem;
+	font-weight: 400;
+}
+
+.text-small {
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+	font-weight: 400;
+}
+
+.text-xs {
+	font-size: 1.3rem;
+	line-height: 1.9rem;
+	font-weight: 600;
 }
