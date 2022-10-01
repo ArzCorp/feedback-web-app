@@ -19,8 +19,8 @@ export default function Home() {
 			<p className="text-small">Texto small</p>
 			<p className="text-xs">Texto extra small</p>
 			<span className={styles.divider}></span>
-			<Button type="button" variant="blue">
-				Boton
+			<Button type="button" variant="back-dark">
+				Go back
 			</Button>
 		</div>
 	)

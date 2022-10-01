@@ -43,3 +43,28 @@
 .btn-red:hover {
 	background-color: var(--red-hover-color);
 }
+
+.btn-back {
+	gap: 15px;
+	background-color: transparent;
+	color: var(--gray-color);
+}
+
+.btn-back:hover {
+	text-decoration: underline;
+}
+
+.btn-back-dark:hover {
+	text-decoration: underline;
+}
+
+.btn-back-dark {
+	gap: 15px;
+	height: 53px;
+	background-color: var(--dark-blue-color);
+	color: var(--white-color);
+}
+
+.icon-back-dark {
+	filter: var(--icon-dark-color);
+}

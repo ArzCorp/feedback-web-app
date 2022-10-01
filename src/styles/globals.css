@@ -28,6 +28,9 @@
 	--blue-hover-color: #7c91f9;
 	--light-blue-color: #62bcfa;
 	--dark-blue-color: #373f68;
+
+	--icon-dark-color: invert(99%) sepia(45%) saturate(4221%) hue-rotate(179deg)
+		brightness(101%) contrast(86%);
 }
 
 html {
