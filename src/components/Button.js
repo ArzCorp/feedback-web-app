@@ -10,13 +10,15 @@ export default function Button({
 }) {
 	return (
 		<button className={`${styles.btn} ${styles[`btn-${variant}`]}`} {...props}>
-			<Image
-				width={15}
-				height={10}
-				alt="Flecha izquierda"
-				src={icon}
-				className={styles[`icon-${variant}`]}
-			/>
+			{variant.includes('back') ? (
+				<Image
+					width={15}
+					height={10}
+					alt="Flecha izquierda"
+					src={icon}
+					className={styles[`icon-${variant}`]}
+				/>
+			) : null}
 			{children}
 		</button>
 	)

@@ -10,6 +10,8 @@
 	border: none;
 	color: #f2f4fe;
 	cursor: pointer;
+	transition: all;
+	transition-duration: 0.3s;
 }
 
 .btn-purple {
