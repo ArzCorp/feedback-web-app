@@ -31,6 +31,8 @@
 
 	--icon-dark-color: invert(99%) sepia(45%) saturate(4221%) hue-rotate(179deg)
 		brightness(101%) contrast(86%);
+	--icon-white: invert(100%) sepia(0%) saturate(7435%) hue-rotate(183deg)
+		brightness(108%) contrast(93%);
 }
 
 html {
@@ -40,6 +42,7 @@ html {
 
 body {
 	font-family: 'Jost', sans-serif;
+	background-color: var(--light-white-color);
 }
 
 a {
