@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from 'styles/components/button.module.css'
-import icon from '../assets/icon-arrow.svg'
+import icon from '../assets/arrow-icon.svg'
 
 export default function Button({
 	children,

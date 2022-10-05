@@ -1,5 +1,5 @@
 import styles from 'styles/components/pill.module.css'
-import arrowIcon from 'assets/icon-arrow.svg'
+import arrowIcon from 'assets/arrow-icon.svg'
 
 import { useState } from 'react'
 import Image from 'next/image'
