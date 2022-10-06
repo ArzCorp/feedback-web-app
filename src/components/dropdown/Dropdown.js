@@ -1,24 +1,28 @@
+import { useState } from 'react'
+
 import styles from 'styles/components/dropdown/dropdown.module.css'
 
 import arrowIcon from 'assets/arrow-icon.svg'
 
-import { useState } from 'react'
 import Image from 'next/image'
+import DropdownOption from 'components/dropdown/DropdownOption'
 
 export default function Dropdown({
-	children,
 	label,
 	strongLabel,
+	options = [],
 	handleOpenChange = () => {},
+	handleSelectedChange = () => {},
 }) {
 	const [isOpen, setIsOpen] = useState(false)
+	const [currentSelectedOption, setCurrentSelectedOption] = useState(0)
 
-	const stylesDropdownIconOpen = isOpen ? styles.dropdownIconOpen : ''
-	const stylesDropdownOpen = isOpen ? styles.dropdownOpen : ''
+	const openDropdownIconStyles = isOpen ? styles.dropdownIconOpen : ''
+	const openDropdownStyles = isOpen ? styles.dropdownOpen : ''
 
 	return (
 		<div
-			className={`${styles.dropdown} ${stylesDropdownOpen}`}
+			className={`${styles.dropdown} ${openDropdownStyles}`}
 			onClick={() => {
 				setIsOpen(!isOpen)
 				handleOpenChange(!isOpen)
@@ -28,14 +32,31 @@ export default function Dropdown({
 				{label}
 				<b>{strongLabel}</b>
 				<Image
-					className={`${styles.dropdownIcon} ${stylesDropdownIconOpen}`}
+					className={`${styles.dropdownIcon} ${openDropdownIconStyles}`}
 					src={arrowIcon}
 					width={10}
 					height={12}
 					alt="Icono de flecha"
 				/>
 			</h4>
-			{isOpen ? <div className={styles.dropdownList}>{children}</div> : null}
+			{isOpen ? (
+				<div className={styles.dropdownList}>
+					{options.map((option, index) => (
+						<DropdownOption
+							key={option.key}
+							value={option.key}
+							isLastOption={index === options.length}
+							handleClick={(value) => {
+								handleSelectedChange(value)
+								setCurrentSelectedOption(value)
+							}}
+							isSelected={currentSelectedOption === option.key}
+						>
+							{option.value}
+						</DropdownOption>
+					))}
+				</div>
+			) : null}
 		</div>
 	)
 }
