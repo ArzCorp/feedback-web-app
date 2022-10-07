@@ -4,7 +4,7 @@ import { OPTIONS } from 'utils/mock'
 
 import Button from 'components/Button'
 import Pill from 'components/Pill'
-import Dropdown from 'components/dropdown/Dropdown'
+import Dropdown from 'components/Dropdown'
 import TextInput from 'components/TextInput'
 
 export default function Home() {

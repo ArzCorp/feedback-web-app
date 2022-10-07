@@ -1,10 +1,10 @@
-import styles from 'styles/components/dropdown/dropdownOption.module.css'
+import styles from 'styles/components/option.module.css'
 
 import Image from 'next/image'
 
 import checkIcon from 'assets/check-icon.svg'
 
-export default function DropdownOption({
+export default function Option({
 	children,
 	value,
 	isSelected,
@@ -15,7 +15,7 @@ export default function DropdownOption({
 
 	return (
 		<div
-			className={`${styles.dropdownOption} ${lastItemStyles} text-regular`}
+			className={`${styles.Option} ${lastItemStyles} text-regular`}
 			onClick={() => handleClick(value)}
 		>
 			<p>{children}</p>

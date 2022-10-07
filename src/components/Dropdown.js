@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import styles from 'styles/components/dropdown/dropdown.module.css'
+import styles from 'styles/components/dropdown.module.css'
 
 import arrowIcon from 'assets/arrow-icon.svg'
 
 import Image from 'next/image'
-import DropdownOption from 'components/dropdown/DropdownOption'
+import Option from 'components/Option'
 
 export default function Dropdown({
 	label,
@@ -42,7 +42,7 @@ export default function Dropdown({
 			{isOpen ? (
 				<div className={styles.dropdownList}>
 					{options.map((option, index) => (
-						<DropdownOption
+						<Option
 							key={option.key}
 							value={option.key}
 							isLastOption={index === options.length}
@@ -53,7 +53,7 @@ export default function Dropdown({
 							isSelected={currentSelectedOption === option.key}
 						>
 							{option.value}
-						</DropdownOption>
+						</Option>
 					))}
 				</div>
 			) : null}
