@@ -1,0 +1,42 @@
+.selectInputContainer {
+	position: relative;
+}
+
+.selectInput {
+	width: 100%;
+	min-width: 285px;
+	padding: 13px 24px;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--light-white-color);
+	outline-color: var(--blue-color);
+}
+
+.selectInputIcon {
+	position: absolute;
+	top: calc(50% - 5px);
+	right: 22px;
+	width: 10px;
+	transform: rotate(-90deg);
+	height: 12px;
+	transition: all;
+	transition-duration: 0.3s;
+}
+
+.selectInputIconOpen {
+	transform: rotate(90deg);
+}
+
+.selectInputList {
+	position: absolute;
+	top: calc(100% + 16px);
+	left: 0px;
+	width: 100%;
+	max-height: 192px;
+	background-color: var(--white-color);
+	box-shadow: 0px 10px 40px rgba(55, 63, 104, 0.350492);
+	transition: all;
+	transition-duration: 0.3s;
+	border-radius: 10px;
+	z-index: 50;
+}

@@ -6,6 +6,7 @@ import Button from 'components/Button'
 import Pill from 'components/Pill'
 import Dropdown from 'components/Dropdown'
 import TextInput from 'components/TextInput'
+import SelectInput from 'components/SelectInput'
 
 export default function Home() {
 	return (
@@ -21,6 +22,7 @@ export default function Home() {
 				options={OPTIONS}
 			/>
 			<TextInput required />
+			<SelectInput label="Feature" options={OPTIONS} />
 		</div>
 	)
 }
