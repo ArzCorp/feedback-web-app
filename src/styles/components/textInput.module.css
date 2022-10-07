@@ -1,0 +1,22 @@
+.input {
+	width: 285px;
+	padding: 13px 24px;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--light-white-color);
+	outline-color: var(--blue-color);
+	transition: all;
+	transition-duration: 0.3s;
+}
+
+.inputErrorMessage {
+	text-align: left;
+	margin-top: 4px;
+	color: var(--red-color);
+	font-weight: 400;
+}
+
+.inputError {
+	border: 1px solid var(--red-color);
+	outline-color: var(--red-color);
+}
