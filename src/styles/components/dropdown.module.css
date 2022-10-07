@@ -49,4 +49,5 @@
 	transition: all;
 	transition-duration: 0.3s;
 	border-radius: 10px;
+	z-index: 50;
 }
