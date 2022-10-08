@@ -2,10 +2,7 @@ import { useState } from 'react'
 
 import styles from 'styles/components/selectInput.module.css'
 
-import arrowIcon from 'assets/arrow-icon.svg'
-
 import Option from './Option'
-import Image from 'next/image'
 
 export default function SelectInput({
 	label,
@@ -24,13 +21,11 @@ export default function SelectInput({
 				value={label}
 				readOnly
 				className={`${styles.selectInput} text-small`}
-				onFocus={() => setIsOpen(true)}
+				onClick={() => setIsOpen(!isOpen)}
 			/>
-			<figure
-				className={`${styles.selectInputIcon} ${openSelectInputIconStyles}`}
-			>
-				<Image src={arrowIcon} width={10} height={12} alt="Icono de flecha" />
-			</figure>
+			<i
+				className={`${styles.selectInputIcon} ${openSelectInputIconStyles} fa-solid fa-chevron-left`}
+			></i>
 			{isOpen ? (
 				<div className={styles.selectInputList}>
 					{options.map((option, index) => (

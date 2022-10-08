@@ -1,8 +1,6 @@
 import styles from 'styles/components/pill.module.css'
-import arrowIcon from 'assets/arrow-icon.svg'
 
 import { useState } from 'react'
-import Image from 'next/image'
 
 export default function Pill({
 	children,
@@ -29,13 +27,9 @@ export default function Pill({
 			}}
 		>
 			{variant === 'icon' ? (
-				<Image
-					className={`${iconActiveStyles} ${styles.pillIcon}`}
-					src={arrowIcon}
-					width={14}
-					height={10}
-					alt="Flecha hacia arriba"
-				/>
+				<i
+					class={`${styles.pillIcon} ${iconActiveStyles} fa-solid fa-chevron-left`}
+				></i>
 			) : (
 				''
 			)}

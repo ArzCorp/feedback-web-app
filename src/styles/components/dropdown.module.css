@@ -28,7 +28,8 @@
 .dropdownIcon {
 	top: 2px;
 	transform: rotate(-90deg);
-	filter: var(--icon-white);
+	color: var(--white-color);
+	font-size: 1.1rem;
 	transition: all;
 	transition-duration: 0.3s;
 }

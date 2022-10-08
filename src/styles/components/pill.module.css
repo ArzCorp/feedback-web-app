@@ -41,11 +41,13 @@
 
 .pillIcon {
 	transform: rotate(90deg);
+	color: var(--blue-color);
+	font-size: 1.1rem;
+	font-weight: 900;
 }
 
 .pillIconActive {
-	filter: invert(100%) sepia(0%) saturate(7435%) hue-rotate(183deg)
-		brightness(108%) contrast(93%);
+	color: var(--white-color);
 }
 
 .pillVariantIcon .pillText {

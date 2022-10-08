@@ -2,9 +2,6 @@ import { useState } from 'react'
 
 import styles from 'styles/components/dropdown.module.css'
 
-import arrowIcon from 'assets/arrow-icon.svg'
-
-import Image from 'next/image'
 import Option from 'components/Option'
 
 export default function Dropdown({
@@ -31,13 +28,9 @@ export default function Dropdown({
 			<h4 className={styles.dropdownLabel}>
 				{label}
 				<b>{strongLabel}</b>
-				<Image
-					className={`${styles.dropdownIcon} ${openDropdownIconStyles}`}
-					src={arrowIcon}
-					width={10}
-					height={12}
-					alt="Icono de flecha"
-				/>
+				<i
+					class={`fa-solid fa-chevron-left ${styles.dropdownIcon} ${openDropdownIconStyles}`}
+				></i>
 			</h4>
 			{isOpen ? (
 				<div className={styles.dropdownList}>
