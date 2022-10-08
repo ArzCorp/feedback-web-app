@@ -29,7 +29,7 @@ export default function Dropdown({
 				{label}
 				<b>{strongLabel}</b>
 				<i
-					class={`fa-solid fa-chevron-left ${styles.dropdownIcon} ${openDropdownIconStyles}`}
+					className={`fa-solid fa-chevron-left ${styles.dropdownIcon} ${openDropdownIconStyles}`}
 				></i>
 			</h4>
 			{isOpen ? (
@@ -40,7 +40,7 @@ export default function Dropdown({
 							value={option.key}
 							isLastOption={index === options.length}
 							handleClick={(value) => {
-								handleSelectedChange(value)
+								handleSelectedChange({ value, text: option.value })
 								setCurrentSelectedOption(value)
 							}}
 							isSelected={currentSelectedOption === option.key}

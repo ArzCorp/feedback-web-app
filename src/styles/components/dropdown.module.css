@@ -1,7 +1,9 @@
 .dropdown {
+	width: max-content;
 	position: relative;
 	height: 72px;
-	width: 194px;
+	min-width: 160px;
+	padding: 0px 17px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -11,6 +13,10 @@
 	cursor: pointer;
 	transition: all;
 	transition-duration: 0.3s;
+}
+
+.dropdown:hover {
+	color: #c3c7d8;
 }
 
 .dropdownOpen {
