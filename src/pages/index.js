@@ -1,28 +1,12 @@
-import styles from 'styles/pages/home.module.css'
-
-import { OPTIONS } from 'utils/mock'
-
-import Button from 'components/Button'
-import Pill from 'components/Pill'
-import Dropdown from 'components/Dropdown'
-import TextInput from 'components/TextInput'
-import SelectInput from 'components/SelectInput'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default function Home() {
-	return (
-		<div className={styles.container}>
-			<Button type="button" variant="red">
-				Go back
-			</Button>
-			<Pill variant="icon">99</Pill>
-			<Pill>UX</Pill>
-			<Dropdown
-				label="Sort by:"
-				strongLabel=" Most Upvates"
-				options={OPTIONS}
-			/>
-			<TextInput required />
-			<SelectInput label="Feature" options={OPTIONS} />
-		</div>
-	)
+	const { push } = useRouter()
+
+	useEffect(() => {
+		push('/desktop')
+	}, [push])
+
+	return <span></span>
 }
