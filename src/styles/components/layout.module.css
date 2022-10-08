@@ -9,3 +9,10 @@
 	margin: 0 auto;
 	padding: 94px 0px 129px 0px;
 }
+
+.twoColumnsLayout {
+	display: grid;
+	grid-template-columns: 255px 1fr;
+	gap: 30px;
+	grid-auto-flow: column;
+}
