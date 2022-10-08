@@ -6,6 +6,7 @@ export default function Button({
 	children,
 	variant = 'purple',
 	className,
+	icon,
 	...props
 }) {
 	return (
@@ -19,7 +20,7 @@ export default function Button({
 					className={styles[`icon-${variant}`]}
 				/>
 			) : null}
-			{children}
+			{icon ? <i className={`${icon} ${styles.btnIcon}`}></i> : null} {children}
 		</button>
 	)
 }
