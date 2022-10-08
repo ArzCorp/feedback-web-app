@@ -1,0 +1,23 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--dark-blue-color);
+	padding-right: 16px;
+	padding-left: 24px;
+	border-radius: 10px;
+}
+
+.headerDetails {
+	display: flex;
+	align-items: center;
+	gap: 21px;
+}
+
+.headerDetails h3 {
+	color: var(--white-color);
+}
+
+.headerDetails h3 i {
+	margin-right: 14px;
+}
