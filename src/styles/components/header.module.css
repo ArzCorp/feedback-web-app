@@ -21,3 +21,13 @@
 .headerDetails h3 i {
 	margin-right: 14px;
 }
+
+@media screen and (max-width: 920px) {
+	.headerDetails {
+		gap: 0px;
+	}
+
+	.headerDetails h3 i {
+		margin-right: 0px;
+	}
+}

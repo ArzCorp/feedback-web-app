@@ -16,3 +16,15 @@
 	gap: 30px;
 	grid-auto-flow: column;
 }
+
+@media screen and (max-width: 1200px) {
+	.layoutContainer {
+		width: 87.15%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.layoutContainer {
+		width: 97%;
+	}
+}

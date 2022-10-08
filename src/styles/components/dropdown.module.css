@@ -58,3 +58,12 @@
 	border-radius: 10px;
 	z-index: 50;
 }
+
+@media screen and (max-width: 920px) {
+	.dropdownLabel b {
+		display: none;
+	}
+	.dropdownLabel i {
+		margin-left: 10px;
+	}
+}
