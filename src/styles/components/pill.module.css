@@ -3,6 +3,7 @@
 	border-radius: 10px;
 	background-color: #f2f4fe;
 	max-width: max-content;
+	padding: 0px 16px;
 	transition: all;
 	transition-duration: 0.3s;
 	cursor: pointer;
@@ -13,8 +14,7 @@
 }
 
 .pillDefault {
-	min-height: 30px;
-	min-width: 48px;
+	height: 30px;
 	justify-content: center;
 	align-items: center;
 	color: var(--blue-color);
