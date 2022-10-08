@@ -23,6 +23,9 @@
 	border-radius: 10px;
 	min-height: 166px;
 	padding: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 8px;
 }
 
 .desktopRoadMap {
@@ -37,6 +40,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 24px;
 }
 
 .desktopRoadMap header p {
@@ -47,4 +51,47 @@
 .desktopRoadMap header p:hover {
 	text-decoration: underline;
 	opacity: 0.25;
+}
+
+.desktopStatus {
+	display: grid;
+	gap: 8px;
+	color: var(--gray-color);
+}
+
+.desktopStatusItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.desktopStatusItemCircle {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin-right: 14px;
+}
+
+.desktopFeedbackList {
+	margin-top: 24px;
+	min-height: 100%;
+	background-color: var(--white-color);
+	border-radius: 10px;
+	display: grid;
+	place-items: center;
+}
+
+.desktopFeedbackListEmpty {
+	text-align: center;
+	width: 410px;
+}
+
+.desktopFeedbackListEmpty p {
+	margin-top: 16px;
+	margin-bottom: 48px;
+}
+
+.desktopFeedbackListEmpty h1 {
+	margin-top: 53px;
 }
