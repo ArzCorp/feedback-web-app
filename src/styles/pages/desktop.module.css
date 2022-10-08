@@ -1,0 +1,50 @@
+.desktopSidebar {
+	display: grid;
+	gap: 24px;
+}
+
+.desktopLogo {
+	background: rgb(232, 77, 112);
+	background: linear-gradient(
+		222deg,
+		rgba(232, 77, 112, 1) 0%,
+		rgba(163, 55, 246, 1) 50%,
+		rgba(40, 167, 237, 1) 100%
+	);
+	color: var(--white-color);
+	border-radius: 10px;
+	padding: 24px;
+	padding-top: 62px;
+	min-height: 137px;
+}
+
+.desktopTags {
+	background-color: var(--white-color);
+	border-radius: 10px;
+	min-height: 166px;
+	padding: 24px;
+}
+
+.desktopRoadMap {
+	background-color: var(--white-color);
+	border-radius: 10px;
+	min-height: 178px;
+	padding: 24px;
+	padding-top: 19px;
+}
+
+.desktopRoadMap header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.desktopRoadMap header p {
+	color: #8397f8;
+	cursor: pointer;
+}
+
+.desktopRoadMap header p:hover {
+	text-decoration: underline;
+	opacity: 0.25;
+}
