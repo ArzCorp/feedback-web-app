@@ -1,0 +1,11 @@
+.layout {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: var(--light-white-color);
+}
+
+.layoutContainer {
+	width: 77.15%;
+	margin: 0 auto;
+	padding: 94px 0px 129px 0px;
+}
