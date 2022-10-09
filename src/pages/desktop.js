@@ -8,8 +8,12 @@ import emptyListImage from 'assets/empty-list-image.png'
 
 import styles from 'styles/pages/desktop.module.css'
 import { STATUS, TAGS } from 'utils/mock'
+import { useState } from 'react'
+import FeedbackCard from 'components/FeedbackCard'
 
 export default function Desktop() {
+	const [feedbacks, setFeedbacks] = useState([{}])
+
 	return (
 		<Layout twoColumns>
 			<section className={styles.desktopSidebar}>
@@ -51,23 +55,38 @@ export default function Desktop() {
 			</section>
 			<section>
 				<Header />
-				<div className={styles.desktopFeedbackList}>
-					<div className={styles.desktopFeedbackListEmpty}>
-						<Image
-							src={emptyListImage}
-							width={129}
-							height={136}
-							alt="No tienes comentarios aun"
+				{feedbacks.length > 0 ? (
+					<div className={styles.desktopFeedbackList}>
+						<FeedbackCard
+							title="Add tags for solutions"
+							subtitle="Easier to search for solutions based on a specific stack."
+							tag="Enhancement"
 						/>
-						<h1>Aún no hay comentarios.</h1>
-						<p className="text-regular">
-							¿Tienes una sugerencia? ¿Encontró un error que necesita ser
-							aplastado? Nos encanta escuchar nuevas ideas para mejorar nuestra
-							aplicación.
-						</p>
-						<Button icon="fa-solid fa-plus">Añadir</Button>
+						<FeedbackCard
+							title="Add tags for solutions"
+							subtitle="Easier to search for solutions based on a specific stack."
+							tag="Enhancement"
+						/>
 					</div>
-				</div>
+				) : (
+					<div className={styles.desktopFeedbackListEmpty}>
+						<div className={styles.desktopFeedbackListEmptyContainer}>
+							<Image
+								src={emptyListImage}
+								width={129}
+								height={136}
+								alt="No tienes comentarios aun"
+							/>
+							<h1>Aún no hay comentarios.</h1>
+							<p className="text-regular">
+								¿Tienes una sugerencia? ¿Encontró un error que necesita ser
+								aplastado? Nos encanta escuchar nuevas ideas para mejorar
+								nuestra aplicación.
+							</p>
+							<Button icon="fa-solid fa-plus">Añadir</Button>
+						</div>
+					</div>
+				)}
 			</section>
 		</Layout>
 	)
