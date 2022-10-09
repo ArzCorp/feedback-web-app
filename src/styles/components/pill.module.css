@@ -53,3 +53,11 @@
 .pillVariantIcon .pillText {
 	margin-top: 8px;
 }
+
+.pillReadOnly {
+	cursor: default;
+}
+
+.pillReadOnly:hover {
+	background-color: #f2f4fe;
+}

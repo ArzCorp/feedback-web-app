@@ -6,6 +6,7 @@ export default function Pill({
 	children,
 	value,
 	variant,
+	readOnly,
 	handleClick = () => {},
 }) {
 	const [isActive, setIsActive] = useState(false)
@@ -17,10 +18,13 @@ export default function Pill({
 
 	const iconActiveStyles = isActive ? styles.pillIconActive : ''
 
+	const pillReadOnlyStyles = readOnly ? styles.pillReadOnly : ''
+
 	return (
 		<div
-			className={`${activeDefaultStyles} ${styles.pill} ${variantStyles} text-xs`}
+			className={`${activeDefaultStyles} ${styles.pill} ${variantStyles} ${pillReadOnlyStyles} text-xs`}
 			onClick={() => {
+				if (readOnly) return
 				setIsActive(!isActive)
 				if (isActive) return handleClick(value)
 				return handleClick('')
