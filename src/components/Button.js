@@ -1,26 +1,29 @@
-import Image from 'next/image'
+import { useRouter } from 'next/router'
 import styles from 'styles/components/button.module.css'
-import icon from '../assets/arrow-icon.svg'
 
 export default function Button({
 	children,
 	variant = 'purple',
 	className,
 	icon,
+	backTo,
 	...props
 }) {
+	const { push } = useRouter()
+
 	return (
-		<button className={`${styles.btn} ${styles[`btn-${variant}`]}`} {...props}>
+		<button
+			className={`${styles.btn} ${styles[`btn-${variant}`]}`}
+			{...props}
+			onClick={() => {
+				if (variant === 'back') return push(backTo)
+			}}
+		>
 			{variant.includes('back') ? (
-				<Image
-					width={15}
-					height={10}
-					alt="Flecha izquierda"
-					src={icon}
-					className={styles[`icon-${variant}`]}
-				/>
+				<i className={`${styles.btnBackIcon} fa-solid fa-chevron-left`}></i>
 			) : null}
-			{icon ? <i className={`${icon} ${styles.btnIcon}`}></i> : null} {children}
+			{icon ? <i className={`${icon} ${styles.btnIcon}`}></i> : null}
+			<span> {children}</span>
 		</button>
 	)
 }

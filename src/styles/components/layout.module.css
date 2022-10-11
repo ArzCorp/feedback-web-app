@@ -5,26 +5,34 @@
 }
 
 .layoutContainer {
-	width: 77.15%;
 	margin: 0 auto;
-	padding: 94px 0px 129px 0px;
 }
 
 .twoColumnsLayout {
+	width: 77.15%;
 	display: grid;
 	grid-template-columns: 255px 1fr;
 	gap: 30px;
 	grid-auto-flow: column;
+	padding: 94px 0px 129px 0px;
+}
+
+.oneColumnLayout {
+	max-width: 49.31%;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 80px 0px 129px 0px;
+	gap: 24px;
 }
 
 @media screen and (max-width: 1200px) {
-	.layoutContainer {
+	.twoColumnsLayout {
 		width: 87.15%;
 	}
 }
 
 @media screen and (max-width: 1024px) {
-	.layoutContainer {
+	.twoColumnsLayout {
 		width: 97%;
 	}
 }

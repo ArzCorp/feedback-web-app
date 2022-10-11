@@ -21,3 +21,7 @@
 	border: 1px solid var(--red-color);
 	outline-color: var(--red-color);
 }
+
+.textarea {
+	min-height: 90px;
+}

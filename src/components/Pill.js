@@ -32,7 +32,7 @@ export default function Pill({
 		>
 			{variant === 'icon' ? (
 				<i
-					class={`${styles.pillIcon} ${iconActiveStyles} fa-solid fa-chevron-left`}
+					className={`${styles.pillIcon} ${iconActiveStyles} fa-solid fa-chevron-left`}
 				></i>
 			) : (
 				''

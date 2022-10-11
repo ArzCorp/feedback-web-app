@@ -10,6 +10,14 @@
 	background-color: var(--white-color);
 }
 
+.feedbackCardTitle {
+	cursor: pointer;
+}
+
+.feedbackCardTitle:hover {
+	text-decoration: underline;
+}
+
 .feedbackCardComments {
 	grid-row: 1 / 3;
 	grid-column: 3 / 4;

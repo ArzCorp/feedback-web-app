@@ -51,16 +51,22 @@
 }
 
 .btn-back {
+	max-width: min-content;
 	gap: 15px;
 	background-color: transparent;
 	color: var(--gray-color);
 }
 
-.btn-back:hover {
+.btnBackIcon {
+	color: var(--blue-color);
+	font-size: 1.1rem;
+}
+
+.btn-back span:hover {
 	text-decoration: underline;
 }
 
-.btn-back-dark:hover {
+.btn-back-dark span:hover {
 	text-decoration: underline;
 }
 
