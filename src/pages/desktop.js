@@ -58,11 +58,13 @@ export default function Desktop() {
 				{feedbacks.length > 0 ? (
 					<div className={styles.desktopFeedbackList}>
 						<FeedbackCard
+							commentId="1"
 							title="Add tags for solutions"
 							subtitle="Easier to search for solutions based on a specific stack."
 							tag="Enhancement"
 						/>
 						<FeedbackCard
+							commentId="3"
 							title="Add tags for solutions"
 							subtitle="Easier to search for solutions based on a specific stack."
 							tag="Enhancement"

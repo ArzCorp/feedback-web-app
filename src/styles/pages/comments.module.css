@@ -1,0 +1,33 @@
+.commentsHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.commentsContainer {
+	background-color: var(--white-color);
+	border-radius: 10px;
+	padding: 24px 32px;
+	padding-bottom: 48px;
+}
+
+.commentsAddComment {
+	background-color: var(--white-color);
+	padding: 24px 34px;
+	padding-bottom: 32px;
+}
+
+.commentsAddComment h3 {
+	margin-bottom: 24px;
+}
+
+.commentsAddCommentActions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 16px;
+}
+
+.commentsAddCommentActions p {
+	color: var(--gray-color);
+}
