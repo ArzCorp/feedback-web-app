@@ -36,3 +36,12 @@
 		width: 97%;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.twoColumnsLayout {
+		width: 100%;
+		padding: 55px 40px;
+		grid-auto-flow: row;
+		grid-template-columns: 1fr;
+	}
+}
