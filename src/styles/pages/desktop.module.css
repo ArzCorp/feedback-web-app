@@ -123,3 +123,29 @@
 		grid-column: 1 / 3;
 	}
 }
+
+@media screen and (max-width: 530px) {
+	.desktopTags {
+		display: none;
+	}
+
+	.desktopRoadMap {
+		display: none;
+	}
+
+	.desktopSidebar {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+
+	.desktopLogo {
+		border-radius: 0px;
+		padding: 16px 24px;
+		padding-right: 28px;
+		min-height: 72px;
+	}
+
+	.desktopFeedbackList {
+		padding: 32px 24px;
+	}
+}

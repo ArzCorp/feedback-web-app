@@ -18,7 +18,7 @@ export default function FeedbackCard({
 
 	return (
 		<article className={styles.feedbackCard}>
-			<div className={styles.FeedbackCardRanking}>
+			<div className={styles.feedbackCardRanking}>
 				<Pill variant="icon">{ranking}</Pill>
 			</div>
 			<div>
@@ -30,16 +30,16 @@ export default function FeedbackCard({
 				>
 					{title}
 				</h3>
-				<p className="text-regular">{subtitle}</p>
+				<p className={`text-regular ${styles.feedbackCardSubtitle}`}>
+					{subtitle}
+				</p>
+				<Pill readOnly>{tag}</Pill>
 			</div>
 			<div className={styles.feedbackCardComments}>
 				<h3>
 					<i className={`fa-solid fa-comment ${styles.feedbackCardIcon}`}></i>
 					{`${commentsAmount}`}
 				</h3>
-			</div>
-			<div className={styles.feedbackCardTag}>
-				<Pill readOnly>{tag}</Pill>
 			</div>
 		</article>
 	)

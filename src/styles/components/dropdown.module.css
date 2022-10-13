@@ -67,3 +67,11 @@
 		margin-left: 10px;
 	}
 }
+
+@media screen and (max-width: 530px) {
+	.dropdown {
+		min-width: min-content;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}

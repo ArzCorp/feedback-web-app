@@ -31,3 +31,15 @@
 		margin-right: 0px;
 	}
 }
+
+@media screen and (max-width: 530px) {
+	.header {
+		padding-right: 24px;
+		border-radius: 0px;
+		gap: 44px;
+	}
+
+	.headerDetails h3 {
+		display: none;
+	}
+}

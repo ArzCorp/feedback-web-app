@@ -45,3 +45,10 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+@media screen and (max-width: 530px) {
+	.twoColumnsLayout {
+		padding: 0px;
+		gap: 0px;
+	}
+}
