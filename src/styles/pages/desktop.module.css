@@ -16,6 +16,37 @@
 	padding: 24px;
 	padding-top: 62px;
 	min-height: 137px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.desktopLogo i {
+	font-size: 24px;
+	transition: all;
+	transition-duration: 0.3s;
+}
+
+.desktopMenu {
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 83px;
+	bottom: 0;
+	right: 0;
+	z-index: 60;
+	display: none;
+}
+
+.desktopMenuContainer {
+	width: 72.27%;
+	min-height: 100%;
+	background-color: var(--light-white-color);
+	padding: 24px;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
 }
 
 .desktopFeedbackListEmpty {
@@ -43,7 +74,7 @@
 
 .desktopFeedbackList {
 	display: grid;
-	margin-top: 24px;
+	padding-top: 24px;
 	gap: 16px;
 }
 
@@ -88,6 +119,10 @@
 		padding: 16px 24px;
 		padding-right: 28px;
 		min-height: 72px;
+	}
+
+	.desktopMenuActive {
+		display: block;
 	}
 
 	.desktopFeedbackList {

@@ -7,21 +7,36 @@ import Image from 'next/image'
 import emptyListImage from 'assets/empty-list-image.png'
 
 import styles from 'styles/pages/desktop.module.css'
-import { STATUS, TAGS } from 'utils/mock'
 import { useState } from 'react'
 import FeedbackCard from 'components/FeedbackCard'
 import Roadmap from 'components/Roadmap'
 import TagList from 'components/TagList'
 
 export default function Desktop() {
+	const [toggleMenu, setToggleMenu] = useState(false)
 	const [feedbacks, setFeedbacks] = useState([{}])
+
+	const menuIcon = toggleMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
+	const isOpenMenu = toggleMenu ? styles.desktopMenuActive : ''
 
 	return (
 		<Layout twoColumns>
 			<section className={styles.desktopSidebar}>
 				<header className={styles.desktopLogo}>
-					<h2>Feedback app</h2>
-					<p className="text-small">Board</p>
+					<div>
+						<h2>Feedback app</h2>
+						<p className="text-small">Board</p>
+					</div>
+					<i
+						className={menuIcon}
+						onClick={() => setToggleMenu(!toggleMenu)}
+					></i>
+					<div className={`${styles.desktopMenu} ${isOpenMenu}`}>
+						<div className={styles.desktopMenuContainer}>
+							<TagList />
+							<Roadmap />
+						</div>
+					</div>
 				</header>
 				<TagList className={styles.desktopTags} id="desktopTagList" />
 				<Roadmap className={styles.desktopRoadMap} />
