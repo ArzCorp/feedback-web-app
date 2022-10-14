@@ -18,61 +18,6 @@
 	min-height: 137px;
 }
 
-.desktopTags {
-	background-color: var(--white-color);
-	border-radius: 10px;
-	min-height: 166px;
-	padding: 24px;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-
-.desktopRoadMap {
-	background-color: var(--white-color);
-	border-radius: 10px;
-	min-height: 178px;
-	padding: 24px;
-	padding-top: 19px;
-}
-
-.desktopRoadMap header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 24px;
-}
-
-.desktopRoadMap header p {
-	color: #8397f8;
-	cursor: pointer;
-}
-
-.desktopRoadMap header p:hover {
-	text-decoration: underline;
-	opacity: 0.25;
-}
-
-.desktopStatus {
-	display: grid;
-	gap: 8px;
-	color: var(--gray-color);
-}
-
-.desktopStatusItem {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.desktopStatusItemCircle {
-	display: inline-block;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	margin-right: 14px;
-}
-
 .desktopFeedbackListEmpty {
 	margin-top: 24px;
 	min-height: 100%;

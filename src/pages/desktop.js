@@ -10,6 +10,8 @@ import styles from 'styles/pages/desktop.module.css'
 import { STATUS, TAGS } from 'utils/mock'
 import { useState } from 'react'
 import FeedbackCard from 'components/FeedbackCard'
+import Roadmap from 'components/Roadmap'
+import TagList from 'components/TagList'
 
 export default function Desktop() {
 	const [feedbacks, setFeedbacks] = useState([{}])
@@ -21,37 +23,8 @@ export default function Desktop() {
 					<h2>Feedback app</h2>
 					<p className="text-small">Board</p>
 				</header>
-				<div className={styles.desktopTags}>
-					<Pill>Todos</Pill>
-					{TAGS.map((tag) => (
-						<Pill key={tag.id}>{tag.name}</Pill>
-					))}
-				</div>
-				<div className={styles.desktopRoadMap}>
-					<header>
-						<h3>Roadmap</h3>
-						<p className={` text-xs`}>View</p>
-					</header>
-					<div className={styles.desktopStatus}>
-						{STATUS.map((state) => {
-							return (
-								<div
-									key={state.id}
-									className={`${styles.desktopStatusItem} text-regular`}
-								>
-									<p>
-										<span
-											className={styles.desktopStatusItemCircle}
-											style={{ backgroundColor: state.color }}
-										></span>
-										{` ${state.name}`}
-									</p>
-									<p className={styles.desktopStatusItemNumber}>{state.task}</p>
-								</div>
-							)
-						})}
-					</div>
-				</div>
+				<TagList className={styles.desktopTags} id="desktopTagList" />
+				<Roadmap className={styles.desktopRoadMap} />
 			</section>
 			<section>
 				<Header />

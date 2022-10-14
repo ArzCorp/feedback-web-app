@@ -1,0 +1,48 @@
+.roadmap {
+	background-color: var(--white-color);
+	border-radius: 10px;
+	min-height: 178px;
+	padding: 24px;
+	padding-top: 19px;
+}
+
+.roadmap header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.roadmap header p {
+	color: #8397f8;
+	cursor: pointer;
+}
+
+.roadmap header p:hover {
+	text-decoration: underline;
+	opacity: 0.25;
+}
+
+.roadmapStatusList {
+	display: grid;
+	gap: 8px;
+	color: var(--gray-color);
+}
+
+.roadmapStatusItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.roadmapStatusItemCircle {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin-right: 14px;
+}
+
+.roadmapStatusItemNumber {
+	font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.tagList {
+	background-color: var(--white-color);
+	border-radius: 10px;
+	min-height: 166px;
+	padding: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
