@@ -14,7 +14,7 @@ import TagList from 'components/TagList'
 
 export default function Desktop() {
 	const [toggleMenu, setToggleMenu] = useState(false)
-	const [feedbacks, setFeedbacks] = useState([{}])
+	const [feedbacks, setFeedbacks] = useState([])
 
 	const menuIcon = toggleMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
 	const isOpenMenu = toggleMenu ? styles.desktopMenuActive : ''

@@ -4,6 +4,7 @@
 	min-height: 178px;
 	padding: 24px;
 	padding-top: 19px;
+	color: var(--dark-color);
 }
 
 .roadmap header {
