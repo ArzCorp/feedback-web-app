@@ -31,3 +31,9 @@
 .commentsAddCommentActions p {
 	color: var(--gray-color);
 }
+
+@media screen and (max-width: 530px) {
+	.commentsAddComment {
+		padding: inherit 24px;
+	}
+}

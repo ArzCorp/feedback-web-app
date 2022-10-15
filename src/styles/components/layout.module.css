@@ -29,6 +29,10 @@
 	.twoColumnsLayout {
 		width: 87.15%;
 	}
+
+	.oneColumnLayout {
+		max-width: 69.31%;
+	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -43,6 +47,12 @@
 		padding: 55px 40px;
 		display: block;
 	}
+
+	.oneColumnLayout {
+		max-width: 100%;
+		padding: 56px 40px;
+		padding-bottom: 120px;
+	}
 }
 
 @media screen and (max-width: 530px) {
@@ -50,5 +60,11 @@
 		padding: 0px;
 		gap: 0px;
 		padding-bottom: 54px;
+	}
+
+	.oneColumnLayout {
+		max-width: 100%;
+		padding: 24px;
+		padding-bottom: 88px;
 	}
 }

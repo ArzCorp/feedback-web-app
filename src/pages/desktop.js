@@ -1,20 +1,19 @@
+import styles from 'styles/pages/desktop.module.css'
+import Image from 'next/image'
+import { useState } from 'react'
+
 import Button from 'components/Button'
 import Header from 'components/Header'
 import Layout from 'components/Layout'
-import Pill from 'components/Pill'
-import Image from 'next/image'
-
-import emptyListImage from 'assets/empty-list-image.png'
-
-import styles from 'styles/pages/desktop.module.css'
-import { useState } from 'react'
 import FeedbackCard from 'components/FeedbackCard'
 import Roadmap from 'components/Roadmap'
 import TagList from 'components/TagList'
 
+import emptyListImage from 'assets/empty-list-image.png'
+
 export default function Desktop() {
 	const [toggleMenu, setToggleMenu] = useState(false)
-	const [feedbacks, setFeedbacks] = useState([])
+	const [feedbacks, setFeedbacks] = useState([{}])
 
 	const menuIcon = toggleMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
 	const isOpenMenu = toggleMenu ? styles.desktopMenuActive : ''
