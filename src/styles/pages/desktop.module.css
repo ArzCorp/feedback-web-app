@@ -51,7 +51,7 @@
 
 .desktopFeedbackListEmpty {
 	margin-top: 24px;
-	min-height: 600px;
+	min-height: 100%;
 	background-color: var(--white-color);
 	border-radius: 10px;
 	display: grid;
@@ -127,10 +127,6 @@
 
 	.desktopMenuActive {
 		display: block;
-	}
-
-	.desktopMenuContainer {
-		margin: 32px 24px;
 	}
 
 	.desktopFeedbackListEmpty {
