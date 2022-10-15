@@ -87,6 +87,11 @@
 	.desktopFeedbackListEmpty {
 		height: fit-content;
 	}
+
+	.desktopFeedbackListEmptyContainer {
+		padding: 70px 24px;
+		padding-bottom: 74px;
+	}
 }
 
 @media screen and (max-width: 650px) {
@@ -131,10 +136,7 @@
 
 	.desktopFeedbackListEmpty {
 		margin: 32px 24px;
-	}
-
-	.desktopFeedbackListEmptyContainer {
-		padding: 0px 24px;
+		margin-bottom: 0px;
 	}
 
 	.desktopFeedbackList {

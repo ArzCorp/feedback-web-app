@@ -41,8 +41,7 @@
 	.twoColumnsLayout {
 		width: 100%;
 		padding: 55px 40px;
-		grid-auto-flow: row;
-		grid-template-columns: 1fr;
+		display: block;
 	}
 }
 
@@ -50,5 +49,6 @@
 	.twoColumnsLayout {
 		padding: 0px;
 		gap: 0px;
+		padding-bottom: 54px;
 	}
 }

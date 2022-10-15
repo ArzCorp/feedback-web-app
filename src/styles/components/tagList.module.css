@@ -1,6 +1,7 @@
 .tagList {
 	background-color: var(--white-color);
 	border-radius: 10px;
+	height: 100%;
 	min-height: 166px;
 	padding: 24px;
 	display: flex;
