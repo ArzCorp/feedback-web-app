@@ -1,5 +1,5 @@
 import styles from 'styles/components/roadmap.module.css'
-import { STATUS } from 'utils/mock'
+import { STATUS } from 'utils/mocks'
 
 export default function Roadmap({ className }) {
 	return (

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { OPTIONS } from 'utils/mock'
+import { OPTIONS } from 'utils/mocks'
 import Button from './Button'
 import Dropdown from './Dropdown'
 import styles from 'styles/components/header.module.css'

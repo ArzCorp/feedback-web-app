@@ -1,16 +1,13 @@
 import styles from 'styles/components/pill.module.css'
 
-import { useState } from 'react'
-
 export default function Pill({
 	children,
 	value,
 	variant,
 	readOnly,
+	isActive = false,
 	handleClick = () => {},
 }) {
-	const [isActive, setIsActive] = useState(false)
-
 	const activeDefaultStyles = isActive ? styles.pillDefaultActive : ''
 
 	const variantStyles =
@@ -23,12 +20,7 @@ export default function Pill({
 	return (
 		<div
 			className={`${activeDefaultStyles} ${styles.pill} ${variantStyles} ${pillReadOnlyStyles} text-xs`}
-			onClick={() => {
-				if (readOnly) return
-				setIsActive(!isActive)
-				if (isActive) return handleClick(value)
-				return handleClick('')
-			}}
+			onClick={() => handleClick(value)}
 		>
 			{variant === 'icon' ? (
 				<i

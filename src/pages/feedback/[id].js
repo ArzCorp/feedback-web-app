@@ -2,16 +2,21 @@ import Button from 'components/Button'
 import FeedbackCard from 'components/FeedbackCard'
 import Layout from 'components/Layout'
 import TextArea from 'components/Textarea'
+import { useFeedbacks } from 'hooks/useFeedbacks'
+import { usePageLoaded } from 'hooks/usePageLoaded'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import styles from 'styles/pages/comments.module.css'
 
 const COMMENT_MAX_LENGTH = 250
 
 export default function Comments() {
-	const [comments, setComments] = useState([])
+	const { isLoaded } = usePageLoaded()
+	const { query } = useRouter()
+	const { feedback } = useFeedbacks({ feedbackId: query.id })
 	const [charactersRemaining, setCharactersRemaining] =
 		useState(COMMENT_MAX_LENGTH)
-	const commentsAmount = comments.length
+	const commentsAmount = feedback.comments?.length
 
 	return (
 		<Layout>
@@ -21,12 +26,7 @@ export default function Comments() {
 				</Button>
 				<Button variant="blue">Editar</Button>
 			</header>
-			<FeedbackCard
-				readOnly
-				title="Add tags for solutions"
-				subtitle="Easier to search for solutions based on a specific stack."
-				tag="Enhancement"
-			/>
+			{isLoaded ? <FeedbackCard readOnly feedback={feedback} /> : null}
 			<div>
 				<h3 className={styles.commentsContainer}>
 					{commentsAmount} Comentarios

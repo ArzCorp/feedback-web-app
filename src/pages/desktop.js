@@ -1,6 +1,7 @@
 import styles from 'styles/pages/desktop.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useFeedbacks } from 'hooks/useFeedbacks'
 
 import Button from 'components/Button'
 import Header from 'components/Header'
@@ -12,8 +13,8 @@ import TagList from 'components/TagList'
 import emptyListImage from 'assets/empty-list-image.png'
 
 export default function Desktop() {
+	const { feedbacks } = useFeedbacks()
 	const [toggleMenu, setToggleMenu] = useState(false)
-	const [feedbacks, setFeedbacks] = useState([{}])
 
 	const menuIcon = toggleMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'
 	const isOpenMenu = toggleMenu ? styles.desktopMenuActive : ''
@@ -44,18 +45,9 @@ export default function Desktop() {
 				<Header />
 				{feedbacks.length > 0 ? (
 					<div className={styles.desktopFeedbackList}>
-						<FeedbackCard
-							commentId="1"
-							title="Add tags for solutions"
-							subtitle="Easier to search for solutions based on a specific stack."
-							tag="Enhancement"
-						/>
-						<FeedbackCard
-							commentId="3"
-							title="Add tags for solutions"
-							subtitle="Easier to search for solutions based on a specific stack."
-							tag="Enhancement"
-						/>
+						{feedbacks.map((feedback) => (
+							<FeedbackCard feedback={feedback} key={feedback.id} />
+						))}
 					</div>
 				) : (
 					<div className={styles.desktopFeedbackListEmpty}>

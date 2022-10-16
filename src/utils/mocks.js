@@ -1,15 +1,15 @@
 export const OPTIONS = [
 	{
 		key: 1,
-		value: 'Most Upvoted',
+		value: 'Más votado',
 	},
 	{
 		key: 2,
-		value: 'Most Downvoted',
+		value: 'Más comentado',
 	},
 	{
 		key: 3,
-		value: 'Most Comments',
+		value: 'Recientes',
 	},
 ]
 
@@ -54,5 +54,26 @@ export const STATUS = [
 		name: 'Completado',
 		color: '#62BCFA',
 		task: 0,
+	},
+]
+
+export const FEEDBACKS = [
+	{
+		id: 1,
+		title: 'No funciona el boton de eliminar',
+		comment: 'El boton de eliminar no funciona en pantallas de 330px',
+		tag: 'Bug',
+		status: 1,
+		comments: [],
+		ranking: 0,
+	},
+	{
+		id: 2,
+		title: 'Agregar padding a los botones',
+		comment: 'Los botones no tienen padding bottom',
+		tag: 'Feature',
+		status: 1,
+		comments: [],
+		ranking: 0,
 	},
 ]

@@ -4,36 +4,29 @@ import styles from 'styles/components/feedbackCard.module.css'
 
 import Pill from './Pill'
 
-export default function FeedbackCard({
-	ranking = 0,
-	title,
-	subtitle,
-	commentsAmount = 0,
-	commentId,
-	tag,
-	readOnly,
-}) {
+export default function FeedbackCard({ feedback, readOnly }) {
 	const { push } = useRouter()
 	const readOnlyStyles = readOnly ? '' : styles.feedbackCardTitle
+	const commentsAmount = feedback.comments.length
 
 	return (
 		<article className={styles.feedbackCard}>
 			<div className={styles.feedbackCardRanking}>
-				<Pill variant="icon">{ranking}</Pill>
+				<Pill variant="icon">{feedback.ranking}</Pill>
 			</div>
 			<div>
 				<h3
 					className={readOnlyStyles}
 					onClick={() => {
-						if (!readOnly) return push(`comments/${commentId}`)
+						if (!readOnly) return push(`feedback/${feedback.id}`)
 					}}
 				>
-					{title}
+					{feedback.title}
 				</h3>
 				<p className={`text-regular ${styles.feedbackCardSubtitle}`}>
-					{subtitle}
+					{feedback.comment}
 				</p>
-				<Pill readOnly>{tag}</Pill>
+				<Pill readOnly>{feedback.tag}</Pill>
 			</div>
 			<div className={styles.feedbackCardComments}>
 				<h3>
