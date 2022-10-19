@@ -10,7 +10,7 @@ export default function SelectInput({
 	handleSelectedChange = () => {},
 }) {
 	const [isOpen, setIsOpen] = useState(false)
-	const [currentSelectedOption, setCurrentSelectedOption] = useState()
+	const [currentSelectedOption, setCurrentSelectedOption] = useState({})
 
 	const openSelectInputIconStyles = isOpen ? styles.selectInputIconOpen : ''
 
@@ -18,7 +18,7 @@ export default function SelectInput({
 		<div className={styles.selectInputContainer}>
 			<input
 				type="text"
-				value={label}
+				value={currentSelectedOption.content || label}
 				readOnly
 				className={`${styles.selectInput} text-small`}
 				onClick={() => setIsOpen(!isOpen)}
@@ -31,11 +31,13 @@ export default function SelectInput({
 					{options.map((option, index) => (
 						<Option
 							key={option.key}
-							value={option.key}
 							isLastOption={index === options.length}
 							handleClick={(value) => {
 								handleSelectedChange(value)
-								setCurrentSelectedOption(value)
+								setCurrentSelectedOption({
+									value: option.key,
+									content: option.value,
+								})
 								setIsOpen(false)
 							}}
 							isSelected={currentSelectedOption === option.key}

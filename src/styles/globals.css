@@ -34,6 +34,13 @@
 		brightness(101%) contrast(86%);
 	--icon-white: invert(100%) sepia(0%) saturate(7435%) hue-rotate(183deg)
 		brightness(108%) contrast(93%);
+
+	--linear-gradient-color: linear-gradient(
+		222deg,
+		rgba(232, 77, 112, 1) 0%,
+		rgba(163, 55, 246, 1) 50%,
+		rgba(40, 167, 237, 1) 100%
+	);
 }
 
 html {

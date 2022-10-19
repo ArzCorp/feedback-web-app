@@ -1,0 +1,86 @@
+.layout {
+	width: 100%;
+	max-width: 540px;
+	gap: 40px;
+}
+
+.newFeedbackContainer {
+	width: 100%;
+	position: relative;
+	background-color: var(--white-color);
+	border-radius: 10px;
+	padding: 52px 42px;
+	padding-bottom: 40px;
+}
+
+.newFeedbackIcon {
+	position: absolute;
+	top: calc(0px - 24px);
+	background: var(--linear-gradient-color);
+	color: var(--white-color);
+	padding: 20px;
+	border-radius: 50%;
+	font-size: 18px;
+}
+
+.newFeedbackContainer h1 {
+	margin-bottom: 40px;
+}
+
+.mainFeedbackContainer h4 {
+	margin-bottom: 2;
+}
+
+.newFeedbackSubtitle {
+	font-weight: 400;
+	margin-bottom: 14px;
+}
+
+.newFeedbackInput {
+	margin-bottom: 24px;
+}
+
+.newFeedbackButtons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 16px;
+}
+
+@media screen and (max-width: 540px) {
+	.layout {
+		gap: 35px;
+	}
+
+	.newFeedbackIcon {
+		padding: 14px;
+		top: calc(0px - 18px);
+	}
+
+	.newFeedbackContainer h1 {
+		font-weight: 1.8rem;
+		margin-bottom: 24px;
+	}
+
+	.newFeedbackInput h4 {
+		font-size: 1.3rem;
+	}
+
+	.newFeedbackSubtitle {
+		font-size: 1.3rem;
+	}
+
+	.newFeedbackContainer {
+		padding: 44px 24px;
+		padding-bottom: 24px;
+		margin-top: 35px;
+	}
+
+	.newFeedbackButtons {
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.newFeedbackButtons button {
+		width: 100%;
+	}
+}

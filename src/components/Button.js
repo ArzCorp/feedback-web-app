@@ -7,6 +7,7 @@ export default function Button({
 	className,
 	icon,
 	backTo,
+	goTo,
 	...props
 }) {
 	const { push } = useRouter()
@@ -16,7 +17,7 @@ export default function Button({
 			className={`${styles.btn} ${styles[`btn-${variant}`]}`}
 			{...props}
 			onClick={() => {
-				if (variant === 'back') return push(backTo)
+				if (variant === 'back' || goTo) return push(backTo || goTo)
 			}}
 		>
 			{variant.includes('back') ? (

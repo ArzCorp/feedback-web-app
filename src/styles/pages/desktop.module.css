@@ -5,12 +5,7 @@
 
 .desktopLogo {
 	background: rgb(232, 77, 112);
-	background: linear-gradient(
-		222deg,
-		rgba(232, 77, 112, 1) 0%,
-		rgba(163, 55, 246, 1) 50%,
-		rgba(40, 167, 237, 1) 100%
-	);
+	background: var(--linear-gradient-color);
 	color: var(--white-color);
 	border-radius: 10px;
 	padding: 24px;

@@ -16,23 +16,33 @@ export const OPTIONS = [
 export const TAGS = [
 	{
 		id: 1,
+		key: 1,
 		name: 'Feature',
+		value: 'Feature',
 	},
 	{
 		id: 2,
+		key: 2,
 		name: 'Enhancement',
+		value: 'Enhancement',
 	},
 	{
 		id: 3,
+		key: 3,
 		name: 'Bug',
+		value: 'Bug',
 	},
 	{
 		id: 4,
+		key: 4,
 		name: 'UI',
+		value: 'UI',
 	},
 	{
 		id: 5,
+		key: 5,
 		name: 'UX',
+		value: 'UX',
 	},
 ]
 

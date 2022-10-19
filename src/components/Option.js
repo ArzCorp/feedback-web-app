@@ -6,7 +6,6 @@ import checkIcon from 'assets/check-icon.svg'
 
 export default function Option({
 	children,
-	value,
 	isSelected,
 	isLastOption,
 	handleClick,
@@ -16,7 +15,7 @@ export default function Option({
 	return (
 		<div
 			className={`${styles.Option} ${lastItemStyles} text-regular`}
-			onClick={() => handleClick(value)}
+			onClick={handleClick}
 		>
 			<p>{children}</p>
 			{isSelected ? (

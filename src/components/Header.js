@@ -24,7 +24,9 @@ export default function Header() {
 					}}
 				/>
 			</div>
-			<Button icon="fa-solid fa-plus">Añadir</Button>
+			<Button icon="fa-solid fa-plus" goTo="/feedback/new">
+				Añadir
+			</Button>
 		</header>
 	)
 }
