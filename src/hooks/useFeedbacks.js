@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react'
-import { FEEDBACKS } from 'utils/mocks'
+import { request } from 'utils/request'
 
-export const useFeedbacks = ({ feedbackId } = {}) => {
+export const useFeedbacks = ({ feedbackId = null } = {}) => {
 	const [feedback, setFeedback] = useState({})
 	const [feedbacks, setFeedbacks] = useState([])
 
+	const getFeedbacks = async () => {
+		const newFeedbacks = await request({ endpoint: 'feedbacks' })
+		setFeedbacks(newFeedbacks)
+	}
+
+	const getFeedback = async (id) => {
+		const newFeedback = await request({ endpoint: `feedbacks/${id}` })
+		setFeedback(newFeedback)
+	}
+
 	useEffect(() => {
-		if (feedbackId) {
-			const selectedFeedback = FEEDBACKS.find(
-				(feedback) => Number(feedback.id) === Number(feedbackId)
-			)
-
-			return setFeedback(selectedFeedback)
+		if (feedbackId === null) {
+			getFeedbacks()
+		} else {
+			getFeedback(feedbackId)
 		}
-
-		setFeedbacks(FEEDBACKS)
 	}, [feedbackId])
 
 	return { feedbacks, feedback }
