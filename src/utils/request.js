@@ -5,6 +5,7 @@ export const request = async ({ endpoint, options = {} } = {}) => {
 
 	const CURRENT_OPTIONS = {
 		...options,
+		...HEADERS,
 	}
 
 	const response = await fetch(CURRENT_URL, CURRENT_OPTIONS)
