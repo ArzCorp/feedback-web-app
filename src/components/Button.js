@@ -8,6 +8,7 @@ export default function Button({
 	icon,
 	backTo,
 	goTo,
+	handleClick = () => {},
 	...props
 }) {
 	const { push } = useRouter()
@@ -18,6 +19,7 @@ export default function Button({
 			{...props}
 			onClick={() => {
 				if (variant === 'back' || goTo) return push(backTo || goTo)
+				return handleClick()
 			}}
 		>
 			{variant.includes('back') ? (

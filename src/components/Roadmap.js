@@ -1,7 +1,9 @@
+import { useStatus } from 'hooks/useStatus'
 import styles from 'styles/components/roadmap.module.css'
-import { STATUS } from 'utils/mocks'
 
 export default function Roadmap({ className }) {
+	const { status } = useStatus()
+
 	return (
 		<div className={`${styles.roadmap} ${className}`}>
 			<header>
@@ -9,7 +11,7 @@ export default function Roadmap({ className }) {
 				<p className={`text-xs`}>View</p>
 			</header>
 			<div className={styles.roadmapStatusList}>
-				{STATUS.map((state) => {
+				{status.map((state) => {
 					return (
 						<div
 							key={state.id}

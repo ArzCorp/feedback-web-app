@@ -1,9 +1,11 @@
+import { useTags } from 'hooks/useTags'
 import { useState } from 'react'
 import styles from 'styles/components/tagList.module.css'
 import { TAGS } from 'utils/mocks'
 import Pill from './Pill'
 
 export default function TagList({ className }) {
+	const { tags } = useTags()
 	const [selectedTag, setSelectedTag] = useState('all')
 
 	return (
@@ -15,7 +17,7 @@ export default function TagList({ className }) {
 				>
 					Todos
 				</Pill>
-				{TAGS.map((tag) => (
+				{tags.map((tag) => (
 					<Pill
 						key={tag.id}
 						value={tag.id}
