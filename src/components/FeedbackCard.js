@@ -7,7 +7,7 @@ import Pill from './Pill'
 export default function FeedbackCard({ feedback, readOnly }) {
 	const { push } = useRouter()
 	const readOnlyStyles = readOnly ? '' : styles.feedbackCardTitle
-	const commentsAmount = feedback.comments?.length
+	const commentsAmount = feedback.comments?.length || 0
 
 	return (
 		<article className={styles.feedbackCard}>
@@ -24,7 +24,7 @@ export default function FeedbackCard({ feedback, readOnly }) {
 					{feedback.title}
 				</h3>
 				<p className={`text-regular ${styles.feedbackCardSubtitle}`}>
-					{feedback.comment}
+					{feedback.detail}
 				</p>
 				<Pill readOnly>{feedback.tag}</Pill>
 			</div>
