@@ -33,7 +33,7 @@
 	top: calc(100% + 16px);
 	left: 0px;
 	width: 100%;
-	max-height: 192px;
+	min-height: 192px;
 	background-color: var(--white-color);
 	box-shadow: 0px 10px 40px rgba(55, 63, 104, 0.350492);
 	transition: all;

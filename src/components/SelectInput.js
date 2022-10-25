@@ -32,7 +32,7 @@ export default function SelectInput({
 					{options.map((option, index) => (
 						<Option
 							key={option.id}
-							isLastOption={index === options.length}
+							isLastOption={index + 1 === options.length}
 							handleClick={() => {
 								handleSelectedChange({
 									target: {
