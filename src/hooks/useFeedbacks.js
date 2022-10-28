@@ -50,6 +50,25 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		}
 	}
 
+	const editFeedback = async (data) => {
+		try {
+			const newFeedback = await request({
+				endpoint: `feedbacks/${data.id}`,
+				options: {
+					method: 'POST',
+					body: JSON.stringify({
+						...data,
+					}),
+				},
+			})
+			setFeedback(newFeedback)
+			setLoading(false)
+			push('/desktop')
+		} catch (error) {
+			console.warn(error.message)
+		}
+	}
+
 	useEffect(() => {
 		setLoading(true)
 		if (!feedbackId) {
@@ -59,5 +78,5 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		}
 	}, [feedbackId])
 
-	return { feedbacks, feedback, loading, newFeedback }
+	return { feedbacks, feedback, loading, newFeedback, editFeedback }
 }

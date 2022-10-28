@@ -24,7 +24,9 @@ export default function Comments() {
 				<Button variant="back" backTo="/desktop">
 					Regresar
 				</Button>
-				<Button variant="blue">Editar</Button>
+				<Button goTo={`/feedback/edit/${query.id}`} variant="blue">
+					Editar
+				</Button>
 			</header>
 			{isLoaded ? <FeedbackCard readOnly feedback={feedback} /> : null}
 			<div>

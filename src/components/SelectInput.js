@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import styles from 'styles/components/selectInput.module.css'
 
@@ -9,11 +9,20 @@ export default function SelectInput({
 	options = [],
 	name,
 	handleSelectedChange = () => {},
+	value,
 }) {
 	const [isOpen, setIsOpen] = useState(false)
 	const [currentSelectedOption, setCurrentSelectedOption] = useState({})
 
 	const openSelectInputIconStyles = isOpen ? styles.selectInputIconOpen : ''
+
+	useEffect(() => {
+		if (value) {
+			setCurrentSelectedOption({
+				name: value,
+			})
+		}
+	}, [value])
 
 	return (
 		<div className={styles.selectInputContainer}>
