@@ -1,3 +1,5 @@
+import { EMPTY_FUNCTION, EMPTY_STRING } from 'utils/constants'
+
 import styles from 'styles/components/pill.module.css'
 
 export default function Pill({
@@ -6,16 +8,16 @@ export default function Pill({
 	variant,
 	readOnly,
 	isActive = false,
-	handleClick = () => {},
+	handleClick = EMPTY_FUNCTION,
 }) {
-	const activeDefaultStyles = isActive ? styles.pillDefaultActive : ''
+	const activeDefaultStyles = isActive ? styles.pillDefaultActive : EMPTY_STRING
 
 	const variantStyles =
 		variant === 'icon' ? styles.pillVariantIcon : styles.pillDefault
 
-	const iconActiveStyles = isActive ? styles.pillIconActive : ''
+	const iconActiveStyles = isActive ? styles.pillIconActive : EMPTY_STRING
 
-	const pillReadOnlyStyles = readOnly ? styles.pillReadOnly : ''
+	const pillReadOnlyStyles = readOnly ? styles.pillReadOnly : EMPTY_STRING
 
 	return (
 		<div
@@ -26,9 +28,7 @@ export default function Pill({
 				<i
 					className={`${styles.pillIcon} ${iconActiveStyles} fa-solid fa-chevron-left`}
 				></i>
-			) : (
-				''
-			)}
+			) : null}
 			<p className={styles.pillText}>{children}</p>
 		</div>
 	)

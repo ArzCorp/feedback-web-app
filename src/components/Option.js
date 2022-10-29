@@ -1,8 +1,9 @@
-import styles from 'styles/components/option.module.css'
+import { EMPTY_STRING } from 'utils/constants'
 
 import Image from 'next/image'
-
 import checkIcon from 'assets/check-icon.svg'
+
+import styles from 'styles/components/option.module.css'
 
 export default function Option({
 	children,
@@ -10,7 +11,7 @@ export default function Option({
 	isLastOption,
 	handleClick,
 }) {
-	const lastItemStyles = isLastOption ? styles.lastItem : ''
+	const lastItemStyles = isLastOption ? styles.lastItem : EMPTY_STRING
 
 	return (
 		<div

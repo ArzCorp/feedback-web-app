@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router'
+import { BACK_BUTTON_VARIANT, EMPTY_FUNCTION } from 'utils/constants'
+
 import styles from 'styles/components/button.module.css'
 
 export default function Button({
@@ -8,21 +10,21 @@ export default function Button({
 	icon,
 	backTo,
 	goTo,
-	handleClick = () => {},
+	handleClick = EMPTY_FUNCTION,
 	...props
 }) {
 	const { push } = useRouter()
 
 	return (
 		<button
-			className={`${styles.btn} ${styles[`btn-${variant}`]}`}
 			{...props}
+			className={`${styles.btn} ${styles[`btn-${variant}`]}`}
 			onClick={() => {
-				if (variant === 'back' || goTo) return push(backTo || goTo)
+				if (variant === BACK_BUTTON_VARIANT || goTo) return push(backTo || goTo)
 				return handleClick()
 			}}
 		>
-			{variant.includes('back') ? (
+			{variant.includes(BACK_BUTTON_VARIANT) ? (
 				<i className={`${styles.btnBackIcon} fa-solid fa-chevron-left`}></i>
 			) : null}
 			{icon ? <i className={`${icon} ${styles.btnIcon}`}></i> : null}

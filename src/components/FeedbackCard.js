@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router'
-
-import styles from 'styles/components/feedbackCard.module.css'
+import { EMPTY_STRING, _0 } from 'utils/constants'
 
 import Pill from './Pill'
 
+import styles from 'styles/components/feedbackCard.module.css'
+
 export default function FeedbackCard({ feedback, readOnly }) {
+	const readOnlyStyles = readOnly ? EMPTY_STRING : styles.feedbackCardTitle
+	const commentsAmount = feedback.comments?.length || _0
 	const { push } = useRouter()
-	const readOnlyStyles = readOnly ? '' : styles.feedbackCardTitle
-	const commentsAmount = feedback.comments?.length || 0
 
 	return (
 		<article className={styles.feedbackCard}>

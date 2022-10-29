@@ -1,21 +1,22 @@
 import { useState } from 'react'
-
-import styles from 'styles/components/dropdown.module.css'
+import { EMPTY_ARRAY, EMPTY_FUNCTION, EMPTY_STRING } from 'utils/constants'
 
 import Option from 'components/Option'
+
+import styles from 'styles/components/dropdown.module.css'
 
 export default function Dropdown({
 	label,
 	strongLabel,
-	options = [],
-	handleOpenChange = () => {},
-	handleSelectedChange = () => {},
+	options = EMPTY_ARRAY,
+	handleOpenChange = EMPTY_FUNCTION,
+	handleSelectedChange = EMPTY_FUNCTION,
 }) {
 	const [isOpen, setIsOpen] = useState(false)
 	const [currentSelectedOption, setCurrentSelectedOption] = useState(0)
 
-	const openDropdownIconStyles = isOpen ? styles.dropdownIconOpen : ''
-	const openDropdownStyles = isOpen ? styles.dropdownOpen : ''
+	const openDropdownIconStyles = isOpen ? styles.dropdownIconOpen : EMPTY_STRING
+	const openDropdownStyles = isOpen ? styles.dropdownOpen : EMPTY_STRING
 
 	return (
 		<div

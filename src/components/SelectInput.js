@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react'
-
-import styles from 'styles/components/selectInput.module.css'
+import { EMPTY_ARRAY, EMPTY_FUNCTION, EMPTY_STRING } from 'utils/constants'
 
 import Option from './Option'
 
+import styles from 'styles/components/selectInput.module.css'
+
 export default function SelectInput({
 	label,
-	options = [],
+	options = EMPTY_ARRAY,
 	name,
-	handleSelectedChange = () => {},
+	handleSelectedChange = EMPTY_FUNCTION,
 	value,
 }) {
 	const [isOpen, setIsOpen] = useState(false)
 	const [currentSelectedOption, setCurrentSelectedOption] = useState({})
 
-	const openSelectInputIconStyles = isOpen ? styles.selectInputIconOpen : ''
+	const openSelectInputIconStyles = isOpen
+		? styles.selectInputIconOpen
+		: EMPTY_STRING
 
 	useEffect(() => {
 		if (value) {

@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import { EMPTY_STRING } from 'utils/constants'
+
 import styles from 'styles/components/textInput.module.css'
 
 export default function TextArea({ handleChange, required, ...props }) {
 	const [error, setError] = useState(false)
-	const [errorMessage, setErrorMessage] = useState('')
+	const [errorMessage, setErrorMessage] = useState(EMPTY_STRING)
 
-	const inputErrorStyles = error ? styles.inputError : ''
+	const inputErrorStyles = error ? styles.inputError : EMPTY_STRING
 
 	const handleValidations = (e) => {
 		const { value } = e.target
@@ -13,7 +15,7 @@ export default function TextArea({ handleChange, required, ...props }) {
 		if (value.length <= 0 && required) return addError('¡Campo requerido!')
 
 		setError(false)
-		setErrorMessage('')
+		setErrorMessage(EMPTY_STRING)
 	}
 
 	const addError = (message) => {

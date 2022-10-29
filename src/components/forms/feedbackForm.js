@@ -3,6 +3,14 @@ import { useFeedbacks } from 'hooks/useFeedbacks'
 import { useRouter } from 'next/router'
 import { useTags } from 'hooks/useTags'
 import { objectHasData } from 'utils/objectUtils'
+import {
+	ADD,
+	CANCEL,
+	DELETE,
+	EDIT,
+	EMPTY_STRING,
+	SAVE_CHANGES,
+} from 'utils/constants'
 
 import Button from 'components/Button'
 import SelectInput from 'components/SelectInput'
@@ -14,17 +22,17 @@ import styles from 'styles/components/forms/feedbackForm.module.css'
 export default function FeedbackForm({ feedback }) {
 	const hasFeedbackData = objectHasData(feedback)
 	const { newFeedback, editFeedback, deleteFeedback } = useFeedbacks()
-	const [values, setValues] = useState({
-		title: '',
-		tag: '',
-		detail: '',
-	})
 	const { back } = useRouter()
 	const { tags } = useTags()
+	const [values, setValues] = useState({
+		title: EMPTY_STRING,
+		tag: EMPTY_STRING,
+		detail: EMPTY_STRING,
+	})
 
 	const formIcon = hasFeedbackData ? 'fa-solid fa-pen' : 'fa-solid fa-plus'
-	const formTitle = hasFeedbackData ? 'Editar' : 'Crear'
-	const formButton = hasFeedbackData ? 'Guardar cambios' : 'Agregar'
+	const formTitle = hasFeedbackData ? EDIT : ADD
+	const formButton = hasFeedbackData ? SAVE_CHANGES : ADD
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -108,16 +116,18 @@ export default function FeedbackForm({ feedback }) {
 				/>
 			</div>
 			<div className={styles.feedbackFormButtons}>
-				<Button
-					variant="red"
-					type="button"
-					handleClick={() => deleteFeedback(feedback)}
-				>
-					Eliminar
-				</Button>
+				{hasFeedbackData ? (
+					<Button
+						variant="red"
+						type="button"
+						handleClick={() => deleteFeedback(feedback)}
+					>
+						{DELETE}
+					</Button>
+				) : null}
 				<div>
-					<Button variant="dark" type="button" handleClick={() => back()}>
-						Cancelar
+					<Button variant="dark" type="button" handleClick={back}>
+						{CANCEL}
 					</Button>
 					<Button type="submit">{formButton}</Button>
 				</div>

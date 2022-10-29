@@ -78,4 +78,9 @@
 	.feedbackFormButtons button {
 		width: 100%;
 	}
+
+	.feedbackFormButtons div {
+		flex-direction: column;
+		gap: 16px;
+	}
 }
