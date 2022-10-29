@@ -52,18 +52,36 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 
 	const editFeedback = async (data) => {
 		try {
-			const newFeedback = await request({
+			const response = await request({
 				endpoint: `feedbacks/${data.id}`,
 				options: {
-					method: 'POST',
+					method: 'PUT',
 					body: JSON.stringify({
-						...data,
+						detail: data.detail,
 					}),
 				},
 			})
-			setFeedback(newFeedback)
+
 			setLoading(false)
 			push('/desktop')
+			return response
+		} catch (error) {
+			console.warn(error.message)
+		}
+	}
+
+	const deleteFeedback = async (data) => {
+		try {
+			const response = await request({
+				endpoint: `feedbacks/${data.id}`,
+				options: {
+					method: 'DELETE',
+				},
+			})
+
+			setLoading(false)
+			push('/desktop')
+			return response
 		} catch (error) {
 			console.warn(error.message)
 		}
@@ -78,5 +96,12 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		}
 	}, [feedbackId])
 
-	return { feedbacks, feedback, loading, newFeedback, editFeedback }
+	return {
+		feedbacks,
+		feedback,
+		loading,
+		newFeedback,
+		editFeedback,
+		deleteFeedback,
+	}
 }

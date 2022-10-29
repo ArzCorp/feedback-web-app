@@ -13,7 +13,7 @@ import styles from 'styles/components/forms/feedbackForm.module.css'
 
 export default function FeedbackForm({ feedback }) {
 	const hasFeedbackData = objectHasData(feedback)
-	const { newFeedback, editFeedback } = useFeedbacks()
+	const { newFeedback, editFeedback, deleteFeedback } = useFeedbacks()
 	const [values, setValues] = useState({
 		title: '',
 		tag: '',
@@ -24,6 +24,7 @@ export default function FeedbackForm({ feedback }) {
 
 	const formIcon = hasFeedbackData ? 'fa-solid fa-pen' : 'fa-solid fa-plus'
 	const formTitle = hasFeedbackData ? 'Editar' : 'Crear'
+	const formButton = hasFeedbackData ? 'Guardar cambios' : 'Agregar'
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -107,10 +108,19 @@ export default function FeedbackForm({ feedback }) {
 				/>
 			</div>
 			<div className={styles.feedbackFormButtons}>
-				<Button variant="dark" type="button" handleClick={() => back()}>
-					Cancelar
+				<Button
+					variant="red"
+					type="button"
+					handleClick={() => deleteFeedback(feedback)}
+				>
+					Eliminar
 				</Button>
-				<Button>Agregar</Button>
+				<div>
+					<Button variant="dark" type="button" handleClick={() => back()}>
+						Cancelar
+					</Button>
+					<Button type="submit">{formButton}</Button>
+				</div>
 			</div>
 		</form>
 	)

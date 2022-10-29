@@ -1,6 +1,7 @@
 .btn {
-	width: 134px;
+	min-width: min-content;
 	height: 48px;
+	padding: 13px 25px;
 	font-size: 1.4rem;
 	font-weight: 700;
 	display: inline-flex;

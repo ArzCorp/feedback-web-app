@@ -36,7 +36,12 @@
 
 .feedbackFormButtons {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
+}
+
+.feedbackFormButtons div {
+	display: flex;
+	align-items: center;
 	gap: 16px;
 }
 
