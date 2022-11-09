@@ -1,4 +1,4 @@
-export const URL = process.env.URL || 'http://localhost:3001'
+export const URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001'
 
 export const HEADERS = {
 	'Content-Type': 'application/json',
