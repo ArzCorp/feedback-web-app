@@ -10,6 +10,7 @@ import {
 	EDIT,
 	EMPTY_STRING,
 	SAVE_CHANGES,
+	SELECT,
 } from 'utils/constants'
 
 import Button from 'components/Button'
@@ -26,7 +27,7 @@ export default function FeedbackForm({ feedback }) {
 	const { tags } = useTags()
 	const [values, setValues] = useState({
 		title: EMPTY_STRING,
-		tag: EMPTY_STRING,
+		tagId: EMPTY_STRING,
 		detail: EMPTY_STRING,
 	})
 
@@ -39,15 +40,17 @@ export default function FeedbackForm({ feedback }) {
 		if (hasFeedbackData) {
 			editFeedback(values)
 		} else {
-			newFeedback({
-				title: values.title,
-				detail: values.detail,
-				tag: values.tag,
-			})
+			newFeedback(values)
 		}
 	}
 
 	const handleChange = (e) => {
+		if (e.target.type === SELECT) {
+			return setValues({
+				...values,
+				[e.target.name]: e.target.id,
+			})
+		}
 		setValues({
 			...values,
 			[e.target.name]: e.target.value,
@@ -81,7 +84,7 @@ export default function FeedbackForm({ feedback }) {
 					Elija una categoría para su feedback
 				</h4>
 				<SelectInput
-					name="tag"
+					name="tagId"
 					options={tags}
 					label="Categorias"
 					value={values.tag}

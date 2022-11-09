@@ -48,6 +48,7 @@ export default function SelectInput({
 							handleClick={() => {
 								handleSelectedChange({
 									target: {
+										type: 'select',
 										name,
 										value: option.name,
 										id: option.id,

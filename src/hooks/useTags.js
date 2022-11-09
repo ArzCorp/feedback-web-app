@@ -8,7 +8,7 @@ export const useTags = () => {
 	const getTags = async () => {
 		try {
 			const newTags = await request({ endpoint: 'tags' })
-			setTags(newTags)
+			setTags(newTags.data)
 			setLoading(false)
 		} catch (error) {
 			console.warn(error.message)

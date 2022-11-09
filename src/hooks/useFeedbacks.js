@@ -11,7 +11,7 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 	const getFeedbacks = async () => {
 		try {
 			const newFeedbacks = await request({ endpoint: 'feedbacks' })
-			setFeedbacks(newFeedbacks)
+			setFeedbacks(newFeedbacks.data)
 			setLoading(false)
 		} catch (error) {
 			console.warn(error.message)
@@ -21,7 +21,7 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 	const getFeedback = async (id) => {
 		try {
 			const newFeedback = await request({ endpoint: `feedbacks/${id}` })
-			setFeedback(newFeedback)
+			setFeedback(newFeedback.data)
 			setLoading(false)
 		} catch (error) {
 			console.warn(error.message)
@@ -32,14 +32,11 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		try {
 			const newFeedback = await request({
 				endpoint: `feedbacks`,
-				options: {
-					method: 'POST',
-					body: JSON.stringify({
-						...data,
-						ranking: 0,
-						comments: [],
-						status: 'Pendiente',
-					}),
+				method: 'POST',
+				body: {
+					...data,
+					ranking: 0,
+					statusId: 1,
 				},
 			})
 			setFeedback(newFeedback)
@@ -54,12 +51,8 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		try {
 			const response = await request({
 				endpoint: `feedbacks/${data.id}`,
-				options: {
-					method: 'PUT',
-					body: JSON.stringify({
-						detail: data.detail,
-					}),
-				},
+				method: 'PATCH',
+				body: data,
 			})
 
 			setLoading(false)

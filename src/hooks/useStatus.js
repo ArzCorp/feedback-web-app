@@ -8,7 +8,7 @@ export const useStatus = () => {
 	const getStatus = async () => {
 		try {
 			const newStatus = await request({ endpoint: 'status' })
-			setStatus(newStatus)
+			setStatus(newStatus.data)
 			setLoading(false)
 		} catch (error) {
 			console.warn(error.message)
