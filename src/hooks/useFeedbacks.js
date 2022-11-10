@@ -67,9 +67,7 @@ export const useFeedbacks = ({ feedbackId } = {}) => {
 		try {
 			const response = await request({
 				endpoint: `feedbacks/${data.id}`,
-				options: {
-					method: 'DELETE',
-				},
+				method: 'DELETE',
 			})
 
 			setLoading(false)
