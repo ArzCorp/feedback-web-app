@@ -1,4 +1,5 @@
 import Button from 'components/Button'
+import Comment from 'components/Comment'
 import FeedbackCard from 'components/FeedbackCard'
 import Layout from 'components/Layout'
 import TextArea from 'components/Textarea'
@@ -29,10 +30,12 @@ export default function Comments() {
 				</Button>
 			</header>
 			{isLoaded ? <FeedbackCard readOnly feedback={feedback} /> : null}
-			<div>
-				<h3 className={styles.commentsContainer}>
-					{commentsAmount} Comentarios
-				</h3>
+			<div className={styles.commentsContainer}>
+				<h3>{commentsAmount} Comentarios</h3>
+				<div className={styles.commentsContainerList}>
+					<Comment userId="1" />
+					<Comment userId="1" />
+				</div>
 			</div>
 			<div className={styles.commentsAddComment}>
 				<h3>Agregar comentario</h3>

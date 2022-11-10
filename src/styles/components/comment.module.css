@@ -1,0 +1,28 @@
+.commentContainer {
+	display: flex;
+	gap: 32px;
+}
+
+.avatarImageContainer {
+	min-width: 40px;
+}
+
+.avatarImage {
+	border-radius: 50%;
+}
+
+.commentUserData {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 17px;
+}
+
+.commentUsername {
+	font-weight: 400;
+}
+
+.commentReply {
+	color: var(--blue-color);
+	font-weight: 600;
+}
