@@ -19,11 +19,13 @@ import TextArea from 'components/Textarea'
 import TextInput from 'components/TextInput'
 
 import styles from 'styles/components/forms/feedbackForm.module.css'
+import { useStatus } from 'hooks/useStatus'
 
 export default function FeedbackForm({ feedback }) {
 	const hasFeedbackData = objectHasData(feedback)
 	const { newFeedback, editFeedback, deleteFeedback } = useFeedbacks()
 	const { back } = useRouter()
+	const { status } = useStatus()
 	const { tags } = useTags()
 	const [values, setValues] = useState({
 		title: EMPTY_STRING,
@@ -87,7 +89,7 @@ export default function FeedbackForm({ feedback }) {
 					name="tagId"
 					options={tags}
 					label="Categorias"
-					value={values.tag}
+					value={values.tagId}
 					handleSelectedChange={handleChange}
 				/>
 			</div>
@@ -98,10 +100,10 @@ export default function FeedbackForm({ feedback }) {
 						Cambiar el estatus de su feedback
 					</h4>
 					<SelectInput
-						name="tag"
-						options={tags}
-						label="Categorias"
-						value={values.status}
+						name="statusId"
+						options={status}
+						label="Estatus"
+						value={values.statusId}
 						handleSelectedChange={handleChange}
 					/>
 				</div>

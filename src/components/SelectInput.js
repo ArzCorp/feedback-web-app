@@ -19,13 +19,18 @@ export default function SelectInput({
 		? styles.selectInputIconOpen
 		: EMPTY_STRING
 
-	useEffect(() => {
-		if (value) {
-			setCurrentSelectedOption({
-				name: value,
-			})
+	const setDefaultSelectedOption = (currentOptions, defaultValue) => {
+		if (defaultValue) {
+			const defaultOption = currentOptions.find(
+				(option) => option.id === defaultValue
+			)
+			setCurrentSelectedOption(defaultOption)
 		}
-	}, [value])
+	}
+
+	useEffect(() => {
+		setDefaultSelectedOption(options, value)
+	}, [value, options])
 
 	return (
 		<div className={styles.selectInputContainer}>
@@ -60,7 +65,7 @@ export default function SelectInput({
 								})
 								setIsOpen(false)
 							}}
-							isSelected={currentSelectedOption === option.id}
+							isSelected={currentSelectedOption.id === option.id}
 						>
 							{option.name}
 						</Option>
