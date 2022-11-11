@@ -4,6 +4,7 @@ import { request } from 'utils/request'
 
 export const useComments = ({ feedbackId } = {}) => {
 	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState(null)
 	const [comments, setComments] = useState([])
 	const { push } = useRouter()
 
@@ -24,12 +25,12 @@ export const useComments = ({ feedbackId } = {}) => {
 				method: 'POST',
 				body: {
 					...data,
-					ranking: 0,
-					statusId: 1,
+					userId: 1,
+					feedbackId: feedbackId,
 				},
 			})
 			setLoading(false)
-			push('/desktop')
+			getComments(feedbackId)
 		} catch (error) {
 			console.warn(error.message)
 		}

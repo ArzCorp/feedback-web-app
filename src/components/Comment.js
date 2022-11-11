@@ -2,9 +2,11 @@ import Image from 'next/image'
 import avatar from 'assets/avatar.jpg'
 import styles from 'styles/components/comment.module.css'
 
-export default function Comment({ userId }) {
+export default function Comment({ userId, comment, isLastComment }) {
+	const lastCommentStyles = isLastComment ? styles.lastComment : ''
+
 	return (
-		<article className={styles.commentContainer}>
+		<article className={`${styles.commentContainer} ${lastCommentStyles}`}>
 			<figure className={styles.avatarImageContainer}>
 				<Image
 					className={styles.avatarImage}
@@ -18,16 +20,11 @@ export default function Comment({ userId }) {
 				<div className={styles.commentUserData}>
 					<div>
 						<h4>Usuario {userId}</h4>
-						<h4 className={styles.commentUsername}>@{userId}</h4>
+						<h4 className={styles.commentUsername}>@user{userId}</h4>
 					</div>
 					<p className={`${styles.commentReply} text-xs`}>Responder</p>
 				</div>
-				<p className="text-small">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-					atque quae incidunt quo totam officia aliquid veniam architecto ab
-					eligendi, laboriosam sequi libero nam sapiente consequuntur harum
-					quidem recusandae quaerat?
-				</p>
+				<p className="text-small">{comment}</p>
 			</div>
 		</article>
 	)

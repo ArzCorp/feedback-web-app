@@ -36,7 +36,7 @@ export default function SelectInput({
 		<div className={styles.selectInputContainer}>
 			<input
 				type="text"
-				value={currentSelectedOption.name || label}
+				value={currentSelectedOption?.name || label}
 				readOnly
 				className={`${styles.selectInput} text-small`}
 				onClick={() => setIsOpen(!isOpen)}

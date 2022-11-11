@@ -1,23 +1,28 @@
+import { useComments } from 'hooks/useComments'
+import { useFeedbacks } from 'hooks/useFeedbacks'
+import { usePageLoaded } from 'hooks/usePageLoaded'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+
 import Button from 'components/Button'
 import Comment from 'components/Comment'
 import FeedbackCard from 'components/FeedbackCard'
 import Layout from 'components/Layout'
 import TextArea from 'components/Textarea'
-import { useFeedbacks } from 'hooks/useFeedbacks'
-import { usePageLoaded } from 'hooks/usePageLoaded'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
 import styles from 'styles/pages/comments.module.css'
 
 const COMMENT_MAX_LENGTH = 250
 
 export default function Comments() {
+	const [comment, setComment] = useState('')
 	const { isLoaded } = usePageLoaded()
 	const { query } = useRouter()
 	const { feedback } = useFeedbacks({ feedbackId: query.id })
+	const { comments, newComment } = useComments({ feedbackId: query.id })
+	const commentsAmount = comments.length
+
 	const [charactersRemaining, setCharactersRemaining] =
 		useState(COMMENT_MAX_LENGTH)
-	const commentsAmount = feedback.comments?.length
 
 	return (
 		<Layout>
@@ -33,8 +38,17 @@ export default function Comments() {
 			<div className={styles.commentsContainer}>
 				<h3>{commentsAmount} Comentarios</h3>
 				<div className={styles.commentsContainerList}>
-					<Comment userId="1" />
-					<Comment userId="1" />
+					{comments.length > 0 ? (
+						comments.map((comment, key) => (
+							<Comment
+								{...comment}
+								key={comment.id}
+								isLastComment={key + 1 === comments.length}
+							/>
+						))
+					) : (
+						<p className="text-small">No tienes comentarios aun</p>
+					)}
 				</div>
 			</div>
 			<div className={styles.commentsAddComment}>
@@ -45,13 +59,23 @@ export default function Comments() {
 					maxLength={250}
 					handleChange={(e) => {
 						setCharactersRemaining(COMMENT_MAX_LENGTH - e.target.value.length)
+						setComment(e.target.value)
 					}}
 				/>
 				<div className={styles.commentsAddCommentActions}>
 					<p className="text-small">
 						{charactersRemaining} Caracteres restantes
 					</p>
-					<Button>Enviar comentario</Button>
+					<Button
+						type="button"
+						handleClick={() =>
+							newComment({
+								comment: comment,
+							})
+						}
+					>
+						Enviar comentario
+					</Button>
 				</div>
 			</div>
 		</Layout>
