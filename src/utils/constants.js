@@ -22,7 +22,7 @@ export const DELETE = 'Eliminar'
 
 export const CANCEL = 'Cancelar'
 
-export const BACK_BUTTON_VARIANT = 'back'
+export const BACK = 'back'
 
 export const ALL = 'all'
 

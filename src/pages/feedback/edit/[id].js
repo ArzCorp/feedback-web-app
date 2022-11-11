@@ -12,7 +12,7 @@ export default function EditFeedbackPage() {
 
 	return (
 		<Layout className={styles.layout}>
-			<Button backTo="/desktop" variant="back">
+			<Button url="/desktop" variant="back">
 				Regresar
 			</Button>
 			<FeedbackForm feedback={feedback} />

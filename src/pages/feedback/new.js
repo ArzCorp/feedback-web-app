@@ -6,7 +6,7 @@ import styles from 'styles/pages/newFeedback.module.css'
 export default function NewFeedbackPage() {
 	return (
 		<Layout className={styles.layout}>
-			<Button backTo="/desktop" variant="back">
+			<Button url="/desktop" variant="back">
 				Regresar
 			</Button>
 			<FeedbackForm />

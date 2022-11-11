@@ -46,4 +46,8 @@
 	.commentsAddComment {
 		padding: inherit 24px;
 	}
+
+	.commentsContainer {
+		padding: 24px 23px;
+	}
 }

@@ -1,7 +1,6 @@
 import { URL, HEADERS } from './constants'
 
 export const request = async ({ endpoint, method, body }) => {
-	console.log(body, method, endpoint)
 	const CURRENT_URL = `${URL}/${endpoint}/`
 
 	const response = await fetch(CURRENT_URL, {

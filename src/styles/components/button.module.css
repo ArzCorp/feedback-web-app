@@ -15,6 +15,18 @@
 	transition-duration: 0.3s;
 }
 
+.hideIcon {
+	display: none;
+}
+
+.showBackButton {
+	--fa-display: inline-block;
+}
+
+.hideBackButton {
+	--fa-display: none;
+}
+
 .btnIcon {
 	margin-right: 5px;
 }

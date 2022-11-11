@@ -27,10 +27,10 @@ export default function Comments() {
 	return (
 		<Layout>
 			<header className={styles.commentsHeader}>
-				<Button variant="back" backTo="/desktop">
+				<Button variant="back" url="/desktop">
 					Regresar
 				</Button>
-				<Button goTo={`/feedback/edit/${query.id}`} variant="blue">
+				<Button url={`/feedback/edit/${query.id}`} variant="blue">
 					Editar
 				</Button>
 			</header>
