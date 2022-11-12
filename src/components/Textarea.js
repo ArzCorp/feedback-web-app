@@ -24,7 +24,7 @@ export default function TextArea({ handleChange, required, ...props }) {
 	}
 
 	return (
-		<div>
+		<div className={styles.textareaContainer}>
 			<textarea
 				className={`${styles.input} ${inputErrorStyles} ${styles.textarea} text-small`}
 				type="text"

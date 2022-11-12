@@ -9,6 +9,10 @@
 	transition-duration: 0.3s;
 }
 
+.textareaContainer {
+	width: 100%;
+}
+
 .inputErrorMessage {
 	text-align: left;
 	margin-top: 4px;
