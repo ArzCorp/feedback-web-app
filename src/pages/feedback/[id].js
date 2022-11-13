@@ -5,11 +5,11 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import Button from 'components/Button'
-import Comment from 'components/Comment'
 import FeedbackCard from 'components/FeedbackCard'
 import Layout from 'components/Layout'
 import TextArea from 'components/Textarea'
 import styles from 'styles/pages/comments.module.css'
+import CommentDetail from 'components/CommentDetail'
 
 const COMMENT_MAX_LENGTH = 250
 
@@ -40,9 +40,10 @@ export default function Comments() {
 				<div className={styles.commentsContainerList}>
 					{comments.length > 0 ? (
 						comments.map((comment, key) => (
-							<Comment
-								{...comment}
+							<CommentDetail
 								key={comment.id}
+								comment={comment.comment}
+								commentId={comment.id}
 								isLastComment={key + 1 === comments.length}
 							/>
 						))

@@ -1,19 +1,23 @@
+import { Fragment, useState } from 'react'
+
+import styles from 'styles/components/comment.module.css'
+
 import Image from 'next/image'
 import avatar from 'assets/avatar.jpg'
-import styles from 'styles/components/comment.module.css'
-import { useState } from 'react'
 import TextArea from './Textarea'
 import Button from './Button'
-import { useReplies } from 'hooks/useReplies'
 
-export default function Comment({ userId, comment, id, isLastComment }) {
-	const lastCommentStyles = isLastComment ? styles.lastComment : ''
+export default function Comment({
+	userId,
+	message,
+	commentId,
+	handleCreateReply,
+}) {
 	const [toggleReply, setToggleReply] = useState(false)
-	const { replies, newReply } = useReplies({ commentId: id })
-	const [reply, setReply] = useState({})
+	const [newMessage, setNewMessage] = useState({})
 
-	const renderComment = ({ user, message }) => {
-		return (
+	return (
+		<Fragment>
 			<div className={styles.commentView}>
 				<figure className={styles.avatarImageContainer}>
 					<Image
@@ -27,8 +31,8 @@ export default function Comment({ userId, comment, id, isLastComment }) {
 				<div>
 					<div className={styles.commentUserData}>
 						<div>
-							<h4>Usuario {user}</h4>
-							<h4 className={styles.commentUsername}>@user{user}</h4>
+							<h4>Usuario {userId}</h4>
+							<h4 className={styles.commentUsername}>@user{userId}</h4>
 						</div>
 						<p
 							className={`${styles.commentReply} text-xs`}
@@ -40,35 +44,29 @@ export default function Comment({ userId, comment, id, isLastComment }) {
 					<p className="text-small">{message}</p>
 				</div>
 			</div>
-		)
-	}
-
-	const sendNewReply = () => {
-		newReply({
-			...reply,
-			commentId: id,
-			userId: 1,
-		})
-	}
-
-	return (
-		<article className={`${styles.commentContainer} ${lastCommentStyles}`}>
-			{renderComment({ user: userId, message: comment })}
-			<div className={styles.repliesContainer}>
-				{replies.map((reply) => renderComment(reply))}
-			</div>
 			{toggleReply ? (
 				<div className={styles.replyContainer}>
 					<TextArea
 						handleChange={(e) => {
-							setReply({ ...reply, message: e.target.value })
+							setNewMessage(e.target.value)
 						}}
 					/>
-					<Button variant="purple" type="button" handleClick={sendNewReply}>
+					<Button
+						variant="purple"
+						type="button"
+						handleClick={() => {
+							handleCreateReply({
+								message: newMessage,
+								userId: 1,
+								commentId,
+							})
+							setToggleReply(false)
+						}}
+					>
 						Responder
 					</Button>
 				</div>
 			) : null}
-		</article>
+		</Fragment>
 	)
 }

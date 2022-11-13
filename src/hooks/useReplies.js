@@ -26,18 +26,19 @@ export const useReplies = ({ commentId } = {}) => {
 				body: {
 					...data,
 					userId: 1,
-					commentId: commentId,
 				},
 			})
 			setLoading(false)
-			getReplies(commentId)
+			getReplies(data.commentId)
 		} catch (error) {
 			console.warn(error.message)
 		}
 	}
 
 	useEffect(() => {
-		getReplies(commentId)
+		if (commentId) {
+			getReplies(commentId)
+		}
 	}, [commentId])
 
 	return {
